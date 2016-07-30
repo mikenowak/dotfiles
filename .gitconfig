@@ -1,0 +1,17 @@
+[user]
+  name = Mike Nowak
+	email = mikenowak@users.noreply.github.com
+[alias]
+  ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+  ls = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
+  fl = log -u
+  cl = clone
+  co = checkout
+  cob = checkout -b
+  com = checkout master
+  bn = !git rev-parse --abbrev-ref HEAD
+  br = branch
+  undo = reset --soft HEAD~1
+  clean-merged = !git branch --merged | grep -v \"\\*\" | xargs -n 1 git branch -d
+	publish = "!git push -u origin $(git bn)"
+	unpublish = "!git push -u origin :$(git bn)"
